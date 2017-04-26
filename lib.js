@@ -23,3 +23,18 @@ math.combo = function(arr, num) {
   range([], arr);
   return result
 }
+
+/**
+ * [求和运算]
+ * @param  {array} arr [数值类型的数组]
+ * @example [1,7,9]
+ * @return {number}     [求和的结果]
+ * @example 17
+ */
+math.sum = function(arr) {
+  try {
+    return eval(arr.join('+'))
+  } catch (e) {
+    return 0
+  }
+}
