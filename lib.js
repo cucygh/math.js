@@ -9,19 +9,59 @@ var math = {};
  * @example [[1,3],[1,2],[3,2]]
  */
 math.combo = function(arr, num) {
-  var result = [];
-  var range = function(r, _arr) {
-    if (r.length == num) {
+  let result = [];
+  let range = function(r, _arr) {
+    if (r.length === num) {
       result.push(r)
     } else {
       let l = r.length;
-      for (var i = 0, len = _arr.length - num + l; i <= len; i++) {
+      for (let i = 0, len = _arr.length - num + l; i <= len; i++) {
         range(r.concat(_arr[i]), _arr.slice(i + 1))
       }
     }
   }
   range([], arr);
   return result
+}
+
+/**
+ * [排列运算]
+ * @param  {array} arr [基本数组]
+ * @param  {number} num [排列长度]
+ * @return {array}     [结果]
+ */
+math.arrange=function(arr,num){
+  let result=[];
+  let range=function(r,_arr){
+    if(r.length===num){
+      result.push(r)
+    }else{
+      switch (r.length) {
+          case 0:
+            _arr.forEach((item,idx)=>{
+              let tmp=[].concat(_arr);
+              tmp.splice(idx,1);
+              range([item],tmp)
+            })
+          break;
+          case 1:
+            _arr.forEach((item,idx)=>{
+              let tmp=[].concat(_arr);
+              tmp.splice(idx,1)
+              range([item].concat(r),tmp);
+            })
+          break;
+          default:
+            _arr.forEach((item,idx)=>{
+              let tmp=[].concat(_arr);
+              tmp.splice(idx,1);
+              range(r.concat(item),tmp)
+            });
+      }
+    }
+  }
+  range([],arr)
+  return result;
 }
 
 /**
