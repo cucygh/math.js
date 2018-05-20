@@ -1,0 +1,27 @@
+{
+  "name": "math",
+  "version": "1.0.0",
+  "description": "本项目旨在开发一套原创的、有趣的、代码量较小且性能不差的数学算法。",
+  "main": "lib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cucygh/math.js.git"
+  },
+  "author": "cuc_ygh@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cucygh/math.js/issues"
+  },
+  "homepage": "https://github.com/cucygh/math.js#readme",
+  "devDependencies": {
+    "eslint": "^5.0.0-alpha.3",
+    "eslint-config-standard": "^12.0.0-alpha.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}
