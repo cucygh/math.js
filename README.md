@@ -7,3 +7,4 @@
 - 组合运算(combo)
 - 排列散发(arrange)
 - 求和运算(sum)
+- 数字汉化(num2cn)
