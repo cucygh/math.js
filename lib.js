@@ -96,7 +96,7 @@ math.num2cn = function (num) {
   } else {
     _int = num
   }
-  let reg = [{test: /\s/g, val: ''}, {test: /^一十/g, val: '十'}, {test: /零[十百千万]/g, val: '零'}, {test: /零+/g, val: '零'}, {test: /零$/g, val: ''}]
+  let reg = [{test: /\s/g, val: ''}, {test: /^一十/g, val: '十'}, {test: /零[十百千万亿]/g, val: '零'}, {test: /零+/g, val: '零'}, {test: /零$/g, val: ''}]
   let _ = (n, pos) => {
     return cn[String.prototype.slice.apply(n.toString(), pos === 1 ? [-pos] : [-pos, -pos + 1]) * 1] + pow[pos - 1]
   }
