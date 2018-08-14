@@ -117,3 +117,25 @@ math.num2cn = function (num) {
   }
   return r
 }
+
+/**
+ * [判断一个数是不是另一个数的n次方]
+ * @param  {number} num [要判断]
+ * @param  {number} base [基数]
+ * @example isSqrt(9,3) true
+ * @return {boolean}     [true | false]
+ */
+math.isSqrt = function (num, base) {
+  if (num !== 1) {
+    while (num !== 1) {
+      if (num % base === 0) {
+        num = num / base
+      } else {
+        return false
+      }
+    }
+    return true
+  } else {
+    return true
+  }
+}
