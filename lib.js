@@ -139,3 +139,14 @@ math.isSqrt = function (num, base) {
     return true
   }
 }
+
+/**
+ * [Unicode码点转UTF-16编码的转换公式]
+ * @param {Number} codePoint [Unicode码点]，如 U+20BB7 码点对应的是十六进制 0x20bb7
+ * @return {String} '\uD842\uDFB7'
+*/
+math.unicode2utf16 (codePoint) {
+  let H = Math.floor((codePoint - 0x10000) / 0x400) + 0xD800
+  let L = (codePoint - 0x10000) % 0x400 + 0xDC00
+  return `\\u${Number(H).toString(16).toUpperCase()}\\u${Number(L).toString(16).toUpperCase()}`
+}
